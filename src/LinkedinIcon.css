@@ -1,0 +1,7 @@
+.my-icon {
+  color: gray; /* Normal color */
+}
+
+.my-icon:hover {
+  color: darkgray; /* Hover color */
+}
