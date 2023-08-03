@@ -47,44 +47,39 @@ const Slideshow = () => {
   };
 
   return (
-    <div
-      name="Home"
-      className="w-full h-[800px] bg-zinc-200 flex flex-col justify-between"
-    >
-      <div className="max-h-[800px] grid md:grid-cols-2 max-w-[1240px] m-auto bg-zinc-200">
-        <div className="flex flex-col justify-center md:items-start w-full px-2 py-4 mt-16">
-          <p className="font-bold text-center text-xl">
-            Process, environmental, health and safety engineering and project
-            management for industrial, commercial, institutional and government
-            clients.
-          </p>
-        </div>
-        <div>
-          {/* <img className='w-full' src={img1}/> */}
-          <div className="max-w-[1240px] h-[500px] m-auto px-4 relative group">
-            <div
-              style={{ backgroundImage: `url(${slides[currentIndex].img})` }}
-              className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
-            ></div>
-            <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-              <BsChevronCompactLeft onClick={prevSlide} size={30} />
-            </div>
-            <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-              <BsChevronCompactRight onClick={nextSlide} size={30} />
-            </div>
-            <div className="flex top-4 justify-center py-2">
-              {slides.map((slide, slideIndex) => (
-                <div
-                  key={slideIndex}
-                  onClick={() => goToSlide(slideIndex)}
-                  className="text-2xl cursor-pointer"
-                >
-                  <RxDotFilled />
-                </div>
-              ))}
-            </div>
+    <div name="Home" className="relative w-full h-[800px]">
+      <div className="max-h-[800px] w-full m-auto bg-gray-900/90 absolute">
+        <div className="w-full h-[800px] group object-cover">
+          <div
+            style={{ backgroundImage: `url(${slides[currentIndex].img})` }}
+            className="w-full h-full bg-center bg-cover duration-500"
+          ></div>
+          <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+            <BsChevronCompactLeft onClick={prevSlide} size={30} />
+          </div>
+          <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+            <BsChevronCompactRight onClick={nextSlide} size={30} />
+          </div>
+          <div className="-top-6 relative flex justify-center">
+            {slides.map((slide, slideIndex) => (
+              <div
+                key={slideIndex}
+                onClick={() => goToSlide(slideIndex)}
+                className="text-2xl cursor-pointer"
+              >
+                <RxDotFilled />
+              </div>
+            ))}
           </div>
         </div>
+        <div>{/* <img className='w-full' src={img1}/> */}</div>
+      </div>
+      <div className="pt-52 w-1/2 mx-auto text-black relative">
+        <p className="font-bold text-center text-xl">
+          Process, environmental, health and safety engineering and project
+          management for industrial, commercial, institutional and government
+          clients.
+        </p>
       </div>
     </div>
   );

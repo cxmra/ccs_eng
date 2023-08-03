@@ -7,7 +7,7 @@ import supportImg from "../assets/20160729_114944.jpg";
 const Services = () => {
   return (
     <div name="Services" className="relative">
-      <div className="w-full h-[750px] bg-gray-900/90 absolute">
+      <div className="w-full h-[1240px] bg-gray-900/90 absolute">
         <img
           className="w-full h-full object-cover mix-blend-overlay"
           src={supportImg}
@@ -15,30 +15,43 @@ const Services = () => {
         />
       </div>
 
-      <div className="max-w-[1240px] mx-auto text-white relative">
+      <div className="w-full mx-auto text-white relative">
         <div className="px-4 pt-4">
           <h2 className="text-3xl pt-8 text-slate-300 uppercase text-center">
             Services
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 relative gap-x-8 gap-y-16 px-4 pt-12 sm:pt-20 text-black">
+        <div className="grid grid-cols-1 lg:grid-cols-3 relative gap-x-6 gap-y-16 pt-12 sm:pt-20 text-black">
           <div className="bg-white rounded-xl shadow-2xl flex flex-col">
             <div className="p-8 flex-grow">
-              <GlobeAltIcon className="w-16 p-4 bg-green-600 text-white rounded-lg mt-[-4rem]" />
-              <h3 className="font-bold text-2xl my-6">Environmental</h3>
+              <PencilIcon className="w-16 p-4 bg-red-700 text-white rounded-lg mt-[-4rem]" />
+              <h3 className="font-bold text-2xl my-6">Engineering</h3>
               <ul className="list-disc list-outside ms-8">
                 <li className="text-gray-600 text-xl py-0">
-                  Environmental Compliance Approvals
+                  Review and design of industrial processes with flammable and
+                  combustible materials, risk of fire and explosion (NFPA, PFC,
+                  CEC/OESC, OBC)
                 </li>
                 <li className="text-gray-600 text-xl py-0">
-                  Air Modelling and Odour Assessments
+                  Building permits for flammable/combustible industrial
+                  processes - paint systems (booths, lines and ovens), dust
+                  collection system
                 </li>
                 <li className="text-gray-600 text-xl py-0">
-                  Noise and Vibration Assessments
+                  Chemical process + Fire Safety (OBC, CEC, NFPA) for Industrial
+                  Processes
                 </li>
                 <li className="text-gray-600 text-xl py-0">
-                  Environmental Reporting (NPRI, 127, CMP, TRA, E2, ChemTRAC)
+                  Dust Hazard Analysis (DHA) for Industrial Processes +
+                  Operations (NFPA 61, 484, 652, 654)
+                </li>
+                <li className="text-gray-600 text-xl py-0">
+                  Electrical Classification Assessments for ESA (CEC, OESC, NFPA
+                  497, 499)
+                </li>
+                <li className="text-gray-600 text-xl py-0">
+                  Safety Ventilation Calculations following NFPA 86 for TSSA
                 </li>
               </ul>
             </div>
@@ -66,10 +79,15 @@ const Services = () => {
                   Pre-Start Health and Safety Reviews
                 </li>
                 <li className="text-gray-600 text-xl py-0">
-                  Industrial Hygiene
+                  Industrial Hygiene and Indoor Air Quality
                 </li>
                 <li className="text-gray-600 text-xl py-0">
-                  Fire Safety (OFC, CEC, NFPA) for Industrial Processes
+                  Chemical process + Fire Safety (OBC, CEC, NFPA) for Industrial
+                  Processes
+                </li>
+                <li className="text-gray-600 text-xl py-0">
+                  Process Hazard Analysis (PHA), Dust Hazard Analysis (DHA),
+                  HAZOP Risk Assessment
                 </li>
               </ul>
             </div>
@@ -90,16 +108,27 @@ const Services = () => {
           </div>
           <div className="bg-white rounded-xl shadow-2xl flex flex-col">
             <div className="p-8 flex-grow">
-              <PencilIcon className="w-16 p-4 bg-red-700 text-white rounded-lg mt-[-4rem]" />
-              <h3 className="font-bold text-2xl my-6">Engineering</h3>
+              <GlobeAltIcon className="w-16 p-4 bg-green-600 text-white rounded-lg mt-[-4rem]" />
+              <h3 className="font-bold text-2xl my-6">Environmental</h3>
               <ul className="list-disc list-outside ms-8">
                 <li className="text-gray-600 text-xl py-0">
-                  Review and design of industrial processes with flammable and
-                  combustible materials, risk of fire and explosion
+                  Environmental Activity and Sector Registry (EASR) Air, Noise,
+                  Odour
                 </li>
                 <li className="text-gray-600 text-xl py-0">
-                  Building permits for paint systems (booths, lines and ovens),
-                  TSSA, ESA and authorities having jurisdiction.
+                  Environmental Compliance Approvals
+                </li>
+                <li className="text-gray-600 text-xl py-0">
+                  Air Modelling and Odour Assessments
+                </li>
+                <li className="text-gray-600 text-xl py-0">
+                  Noise and Vibration Assessments
+                </li>
+                <li className="text-gray-600 text-xl py-0">
+                  Environmental Reporting (NPRI, E2, P2, GHG)
+                </li>
+                <li className="text-gray-600 text-xl py-0">
+                  Land use Compatibility - Air, Noise, Odour
                 </li>
               </ul>
             </div>
