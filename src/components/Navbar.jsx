@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-scroll";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
-import logoImg from "../assets/CCSlogo.jpg";
+import logoImg from "../assets/TransparentCCSLogo.png";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
