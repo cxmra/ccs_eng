@@ -47,9 +47,9 @@ const Slideshow = () => {
   };
 
   return (
-    <div name="Home" className="relative w-full h-[800px]">
-      <div className="max-h-[800px] w-full m-auto bg-gray-900/90 absolute">
-        <div className="w-full h-[800px] group object-cover">
+    <div name="Home" className="relative w-full h-screen">
+      <div className="max-h-screen w-full m-auto bg-gray-900/90 absolute">
+        <div className="w-full h-screen group object-cover">
           <div
             style={{ backgroundImage: `url(${slides[currentIndex].img})` }}
             className="w-full h-full bg-center bg-cover duration-500"
