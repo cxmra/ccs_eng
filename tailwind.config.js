@@ -4,26 +4,26 @@ module.exports = {
   theme: {
     extend: {
       padding: {
-        '1/3': '33.33333%',
-        '2/3': '66.66667%',
+        "1/3": "33.33333%",
+        "2/3": "66.66667%",
       },
     },
     screens: {
-      sm: '640px',
+      sm: "640px",
       // => @media (min-width: 640px) { ... }
 
-      md: '768px',
+      md: "768px",
       // => @media (min-width: 640px) { ... }
 
-      lg: '1024px',
+      lg: "1024px",
       // => @media (min-width: 640px) { ... }
 
-      xl: '1280px',
+      xl: "1280px",
       // => @media (min-width: 640px) { ... }
 
-      '2xl': '1536px',
+      "2xl": "1536px",
       // => @media (min-wdith: 1536px) { ... }
     },
   },
   plugins: [],
-}
+};

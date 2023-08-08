@@ -5,9 +5,11 @@ import { RxDotFilled } from "react-icons/rx";
 
 import img1 from "../assets/20221025_101042.jpg";
 import img2 from "../assets/20210916_121258.jpg";
-import img3 from "../assets/20221025_105532.jpg";
+import img3 from "../assets/20200217_105507.jpg";
 import img4 from "../assets/20221118_092956.jpg";
-import img5 from "../assets/20230308_112625.jpg";
+import img5 from "../assets/20200703_102755.jpg";
+import img6 from "../assets/MBRS_2023_IndividualMemberLogo_Color.png";
+import img7 from "../assets/engineerlogo.png";
 
 const slides = [
   {
@@ -48,16 +50,16 @@ const Slideshow = () => {
 
   return (
     <div name="Home" className="relative w-full h-screen">
-      <div className="max-h-screen w-full m-auto bg-gray-900/90 absolute">
-        <div className="w-full h-screen group object-cover">
+      <div className="max-h-screen w-full m-auto bg-gray-900/90 absolute flex flex-col">
+        <div className="w-full h-screen group object-cover grow">
           <div
             style={{ backgroundImage: `url(${slides[currentIndex].img})` }}
             className="w-full h-full bg-center bg-cover duration-500"
           ></div>
-          <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+          <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/50 text-white cursor-pointer">
             <BsChevronCompactLeft onClick={prevSlide} size={30} />
           </div>
-          <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+          <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/50 text-white cursor-pointer">
             <BsChevronCompactRight onClick={nextSlide} size={30} />
           </div>
           <div className="-top-6 relative flex justify-center">
@@ -72,14 +74,17 @@ const Slideshow = () => {
             ))}
           </div>
         </div>
-        <div>{/* <img className='w-full' src={img1}/> */}</div>
-      </div>
-      <div className="pt-52 w-1/2 mx-auto text-black relative">
-        <p className="font-bold text-center text-xl">
-          Process, environmental, health and safety engineering and project
-          management for industrial, commercial, institutional and government
-          clients.
-        </p>
+        <div className="h-[80px] w-full bg-zinc-200 flex items-center">
+          <img className="mx-auto w-16" src={img6}></img>
+          <div className="w-full sm:w-2/3 sm:pl-32">
+            <p className="font-bold text-center text-xs">
+              Process, environmental, health and safety engineering and project
+              management for industrial, commercial, institutional and
+              government clients.
+            </p>
+          </div>
+          <img className="mx-auto w-24 sm:w-48" src={img7}></img>
+        </div>
       </div>
     </div>
   );
