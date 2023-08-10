@@ -6,10 +6,13 @@ import { RxDotFilled } from "react-icons/rx";
 import img1 from "../assets/20221025_101042.jpg";
 import img2 from "../assets/20210916_121258.jpg";
 import img3 from "../assets/20200217_105507.jpg";
-import img4 from "../assets/20221118_092956.jpg";
-import img5 from "../assets/20200703_102755.jpg";
-import img6 from "../assets/MBRS_2023_IndividualMemberLogo_Color.png";
-import img7 from "../assets/engineerlogo.png";
+import img4 from "../assets/20190820_160911.jpg";
+import img5 from "../assets/20200703_135933.jpg";
+import img6 from "../assets/20210726_143543.jpg";
+import img7 from "../assets/20220216_104412.jpg";
+
+import logoimg1 from "../assets/MBRS_2023_IndividualMemberLogo_Color.png";
+import logoimg2 from "../assets/engineerlogo.png";
 
 const slides = [
   {
@@ -26,6 +29,12 @@ const slides = [
   },
   {
     img: img5,
+  },
+  {
+    img: img6,
+  },
+  {
+    img: img7,
   },
 ];
 
@@ -75,15 +84,14 @@ const Slideshow = () => {
           </div>
         </div>
         <div className="h-[80px] w-full bg-zinc-200 flex items-center">
-          <img className="mx-auto w-16" src={img6}></img>
+          <img className="mx-auto w-16" src={logoimg1} alt=""></img>
           <div className="w-full sm:w-2/3 sm:pl-32">
-            <p className="font-bold text-center text-xs">
-              Process, environmental, health and safety engineering and project
-              management for industrial, commercial, institutional and
-              government clients.
+            <p className="font-bold text-center text-xs md:text-lg">
+              Process, environmental, health and safety engineering for
+              industrial, commercial, institutional and government clients.
             </p>
           </div>
-          <img className="mx-auto w-24 sm:w-48" src={img7}></img>
+          <img className="mx-auto w-24 sm:w-48" src={logoimg2} alt=""></img>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 .my-icon {
-  color: gray; /* Normal color */
+  color: #075985; /* Normal color */
 }
 
 .my-icon:hover {
-  color: darkgray; /* Hover color */
+  color: #0c4a6e; /* Hover color */
 }
