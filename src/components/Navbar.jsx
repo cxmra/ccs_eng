@@ -75,7 +75,7 @@ const Navbar = () => {
             </Link>
           </ul>
         </div>
-        <div className="md:mr-8 text-2xl">
+        <div className="hidden md:block mr-8 text-2xl">
           <a
             href="https://www.linkedin.com/in/jim-anderson-1153524/"
             target="_blank"
