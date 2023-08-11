@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-scroll";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
-
 import logoImg from "../assets/TransparentCCSLogo.png";
-
 import { FaLinkedin } from "react-icons/fa";
 import "../LinkedinIcon.css";
 
@@ -12,29 +10,8 @@ const Navbar = () => {
   const handleClick = () => setNav(!nav);
   const handleClose = () => setNav(!nav);
 
-  const [isSolidNavbar, setIsSolidNavbar] = useState(false);
-  const handleScroll = () => {
-    if (window.scrollY >= 100) {
-      setIsSolidNavbar(true);
-    } else {
-      setIsSolidNavbar(false);
-    }
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  });
   return (
-    <div
-      className={`bg-white w-screen h-[80px] z-10 fixed drop-shadow-xl ${
-        window.innerWidth >= 768
-          ? `bg-opacity-${isSolidNavbar ? "100" : "0"}
-      } transition-bg-opacity duration-300`
-          : ""
-      }`}
-    >
+    <div className="bg-white w-screen h-[80px] z-10 fixed drop-shadow-xl">
       <div className="px-2 flex justify-between items-center w-full h-full">
         <div className="flex items-center">
           <img src={logoImg} alt="/" className=" w-10 h-10" />
@@ -80,24 +57,8 @@ const Navbar = () => {
             <FaLinkedin className="my-icon" />
           </a>
         </div>
-        <div className="md:hidden mr-4">
-          {!nav ? (
-            <MenuIcon
-              className="w-5"
-              onClick={() => {
-                handleClick();
-                setIsSolidNavbar(true);
-              }}
-            />
-          ) : (
-            <XIcon
-              className="w-5"
-              onClick={() => {
-                handleClick();
-                if (window.scrollY < 100) setIsSolidNavbar(false);
-              }}
-            />
-          )}
+        <div className="md:hidden mr-4" onClick={handleClick}>
+          {!nav ? <MenuIcon className="w-5" /> : <XIcon className="w-5" />}
         </div>
       </div>
       <ul

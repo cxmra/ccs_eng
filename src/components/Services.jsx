@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-scroll";
 import { ArrowSmRightIcon } from "@heroicons/react/outline";
 import { GlobeAltIcon, PencilIcon, HeartIcon } from "@heroicons/react/solid";
-
 import supportImg from "../assets/20160729_114944.jpg";
+
 const Services = () => {
   return (
     <div name="Services" className="relative">
