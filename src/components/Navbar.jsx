@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
@@ -12,28 +12,38 @@ const Navbar = () => {
   const handleClick = () => setNav(!nav);
   const handleClose = () => setNav(!nav);
 
-  const [activeTab, setActiveTab] = useState("Home");
-  const handleTabClick = (tab) => {
-    setActiveTab(tab);
+  const [isSolidNavbar, setIsSolidNavbar] = useState(false);
+  const handleScroll = () => {
+    if (window.scrollY >= 100) {
+      setIsSolidNavbar(true);
+    } else {
+      setIsSolidNavbar(false);
+    }
   };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
   return (
-    <div className="w-screen h-[80px] z-10 bg-zinc-200 fixed drop-shadow-lg">
+    <div
+      className={`bg-white w-screen h-[80px] z-10 fixed drop-shadow-xl ${
+        window.innerWidth >= 768
+          ? `bg-opacity-${isSolidNavbar ? "100" : "0"}
+      } transition-bg-opacity duration-300`
+          : ""
+      }`}
+    >
       <div className="px-2 flex justify-between items-center w-full h-full">
         <div className="flex items-center">
           <img src={logoImg} alt="/" className=" w-10 h-10" />
           <h1 className="text-3xl font-bold mr-4 sm:text-4xl">
             CCS Engineering
           </h1>
-          <ul className="hidden md:flex">
+          <ul className="hidden md:flex font-bold">
             <Link to="Home" spy={true} smooth={true} duration={500}>
-              <li
-                className={`rounded-2xl cursor-pointer transition duration-100 ease-in-out ${
-                  activeTab === "Home"
-                    ? "bg-zinc-400 hover:bg-zinc-500"
-                    : "hover:bg-zinc-400"
-                }`}
-                onClick={() => handleTabClick("Home")}
-              >
+              <li className="rounded-2xl cursor-pointer transition duration-100 ease-in-out hover:bg-zinc-200">
                 Home
               </li>
             </Link>
@@ -44,14 +54,7 @@ const Navbar = () => {
               offset={-75}
               duration={500}
             >
-              <li
-                className={`rounded-2xl cursor-pointer transition duration-100 ease-in-out ${
-                  activeTab === "Services"
-                    ? "bg-zinc-400 hover:bg-zinc-500"
-                    : "hover:bg-zinc-400"
-                }`}
-                onClick={() => handleTabClick("Services")}
-              >
+              <li className="rounded-2xl cursor-pointer transition duration-100 ease-in-out hover:bg-zinc-200">
                 Services
               </li>
             </Link>
@@ -62,20 +65,13 @@ const Navbar = () => {
               offset={-20}
               duration={500}
             >
-              <li
-                className={`rounded-2xl cursor-pointer transition duration-100 ease-in-out ${
-                  activeTab === "Contact"
-                    ? "bg-zinc-400 hover:bg-zinc-500"
-                    : "hover:bg-zinc-400"
-                }`}
-                onClick={() => handleTabClick("Contact")}
-              >
+              <li className="rounded-2xl cursor-pointer transition duration-100 ease-in-out hover:bg-zinc-200">
                 Contact
               </li>
             </Link>
           </ul>
         </div>
-        <div className="hidden md:block mr-8 text-2xl">
+        <div className="hidden md:block mr-8 text-2xl bg-white">
           <a
             href="https://www.linkedin.com/in/jim-anderson-1153524/"
             target="_blank"
@@ -84,11 +80,29 @@ const Navbar = () => {
             <FaLinkedin className="my-icon" />
           </a>
         </div>
-        <div className="md:hidden mr-4" onClick={handleClick}>
-          {!nav ? <MenuIcon className="w-5" /> : <XIcon className="w-5" />}
+        <div className="md:hidden mr-4">
+          {!nav ? (
+            <MenuIcon
+              className="w-5"
+              onClick={() => {
+                handleClick();
+                setIsSolidNavbar(true);
+              }}
+            />
+          ) : (
+            <XIcon
+              className="w-5"
+              onClick={() => {
+                handleClick();
+                if (window.scrollY < 100) setIsSolidNavbar(false);
+              }}
+            />
+          )}
         </div>
       </div>
-      <ul className={!nav ? "hidden" : "absolute bg-zinc-200 w-full px-8"}>
+      <ul
+        className={!nav ? "hidden" : "font-bold absolute bg-white w-full px-8"}
+      >
         <li className="border-b-2 border-zinc-300 w-full cursor-pointer">
           <Link
             onClick={handleClose}

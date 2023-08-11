@@ -22,7 +22,7 @@ const Services = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 relative gap-x-6 gap-y-16 pt-12 sm:pt-20 text-black">
+        <div className="grid grid-cols-1 lg:grid-cols-3 relative gap-x-6 gap-y-16 pt-12 sm:pt-16 text-black">
           <div className="bg-white rounded-xl shadow-2xl flex flex-col">
             <div className="p-8 flex-grow">
               <PencilIcon className="w-16 p-4 bg-red-700 text-white rounded-lg mt-[-4rem]" />

@@ -5,7 +5,7 @@ import { RxDotFilled } from "react-icons/rx";
 
 import img1 from "../assets/20221025_101042.jpg";
 import img2 from "../assets/20210916_121258.jpg";
-import img3 from "../assets/20200217_105507.jpg";
+import img3 from "../assets/20210331_092217.jpg";
 import img4 from "../assets/20190820_160911.jpg";
 import img5 from "../assets/20200703_135933.jpg";
 import img6 from "../assets/20210726_143543.jpg";
@@ -83,7 +83,7 @@ const Slideshow = () => {
             ))}
           </div>
         </div>
-        <div className="h-[80px] w-full bg-zinc-200 flex items-center">
+        <div className="h-[80px] w-full bg-white flex items-center">
           <img className="mx-auto w-16" src={logoimg1} alt=""></img>
           <div className="w-full sm:w-2/3 sm:pl-32">
             <p className="font-bold text-center text-xs md:text-lg">
