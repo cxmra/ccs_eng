@@ -50,7 +50,7 @@ const Navbar = () => {
         </div>
         <div className="hidden md:block mr-8 text-2xl bg-white">
           <a
-            href="https://www.linkedin.com/in/jim-anderson-1153524/"
+            href="https://www.linkedin.com/company/ccs-engineering-inc/about/"
             target="_blank"
             rel="noopener noreferrer"
           >
